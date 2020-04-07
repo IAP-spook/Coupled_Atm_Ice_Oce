@@ -1,0 +1,6 @@
+how to change the compile file
+
+frame/Makefile:13:                atm_couple
+main/depend.common:84:		atm_coupler.o \
+main/depend.common:140:atm_coupler.o: module_domain.o module_parallel.o mct_wrf_coupler_params.o
+

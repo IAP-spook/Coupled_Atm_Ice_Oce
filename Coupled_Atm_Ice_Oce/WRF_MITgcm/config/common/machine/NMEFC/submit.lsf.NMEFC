@@ -1,0 +1,78 @@
+#!/bin/bash
+##################################################################################
+#  Copyright (c) 2013, Tsinghua University. 
+#  This code is initially finished by Dr. Ruizhe Li on 2013/3/28,
+#  and then modified by Dr. Li Liu
+#  If you have any problem, please contact:
+#  Dr. Ruizhe Li via liruizhe@gmail.com
+#  or Dr. Li Liu via liuli-cess@tsinghua.edu.cn
+##################################################################################
+
+check=`expr $# % 4`
+if (( check != 0 ))
+then
+    echo $#
+    echo "Wrong paramters!"
+    exit 1;
+fi
+num_of_models=`expr $# / 4`
+submit_file="job.lsf"
+#paramter of mpiexec
+param="mpiexec.hydra -genv I_MPI_DEVICE rdma"
+
+declare -a proc_map
+declare -a node_num_proc
+node_total_need=0
+proc_count=0
+for (( i = 0; i < num_of_models; i++ ))
+do
+    execmd[i]=$1
+    shift
+    inputnml[i]=$1
+    shift
+    num_proc[i]=$1
+    node_total_need=`expr $node_total_need + $1`
+    shift
+    num_thread[i]=$1
+    shift
+    
+    if (( i > 0 ))
+    then
+        param="$param : "
+    fi
+    param="$param -np ${num_proc[i]}  \"${execmd[i]}\" "
+done
+
+
+cat > $submit_file << EOF
+#!/bin/bash
+#BSUB -q production
+#BSUB -n $node_total_need
+#BSUB -R "span[ptile=28]"
+#BSUB -J ctrlrun
+#BSUB -o %J.out
+#BSUB -e %J.err
+
+export I_MPI_HYDRA_BOOTSTRAP=lsf
+export I_MPI_HYDRA_BRANCH_COUNT=12
+export I_MPI_LSF_USE_COLLECTIVE_LAUNCH=1
+. /fs01/platform/lsf/conf/profile.lsf
+export INTEL_LICENSE_FILE=/fs01/apps/intel/COM_L___L9TX-FXGWPC8V.lic
+export LSF_SERVERDIR=/fs01/platform/lsf/9.1/linux2.6-glibc2.3-x86_64/etc
+export LSF_LIBDIR=/fs01/platform/lsf/9.1/linux2.6-glibc2.3-x86_64/lib
+export LSF_BINDIR=/fs01/platform/lsf/9.1/linux2.6-glibc2.3-x86_64/bin
+export LSF_ENVDIR=/fs01/platform/lsf/conf
+export XLSF_UIDDIR=/fs01/platform/lsf/9.1/linux2.6-glibc2.3-x86_64/lib/uid
+export PATH=/apps/apps/intel/impi/2017.2.191/bin64:$PATH
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/apps/intel/mkl/lib/intel64:/fs01/apps/netcdf-4.4.1.1-icc/lib
+source /apps/apps/intel/mkl/bin/mklvars.sh intel64
+source /fs01/apps/intel/bin/compilervars.sh intel64
+source /apps/apps/intel/impi/2017.2.191/bin64/mpivars.sh intel64
+
+
+EOF
+
+
+echo "$param" >> $submit_file
+bsub < $submit_file

@@ -1,0 +1,14 @@
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/shr/shr_orb_mod.F90
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/shr/shr_sys_mod.F90
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/shr/shr_mpi_mod.F90
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/shr/shr_kind_mod.F90
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/shr/shr_const_mod.F90
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/Data_MGT
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/Parallel_MGT
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/Runtime_MGT
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/Driver
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/Utils
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/CoR
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/libs/c_coupler/src/XML
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/cpl/Atm_Ice_Oce
+/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/models/atm/WRFV3

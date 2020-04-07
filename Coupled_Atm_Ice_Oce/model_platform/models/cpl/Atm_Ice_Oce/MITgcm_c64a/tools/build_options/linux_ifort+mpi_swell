@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# ----------------------------------------------------------------------------
+# FOR MITgcm COMPILATION ON OSC CLUSTER SAL 
+# Last updated: HP 04/08/10
+# ----------------------------------------------------------------------------
+
+FC=mpiifort
+CC=mpiicc
+LINK=mpiifort
+
+CPP='/usr/bin/cpp -P -traditional'
+MPI='true'
+
+#FFLAGS='-fPIC -r8 -i4 -WB -convert big_endian -assume byterecl'
+FFLAGS='-r8 -i4 -132 -WB -convert big_endian -assume byterecl -I/share/local/include -I/usr/include -I/fs01/apps/netcdf-4.4.4-ifort/include -I/fs01/apps/intel/compilers_and_libraries_2017.3.191/linux/mpi/include64 -I$(CODEROOT)/libs/c_coupler/build' 
+FOPTIM='-O0 -g -traceback -check bounds,pointer,stack'
+
+
+F90FLAGS=$FFLAGS
+F90OPTIM=$FOPTIM
+
+#CFLAGS='-O3 -xssse3 -ip -fPIC'
+CFLAGS='-O0 -g -traceback -ip'
+
+DEFINES='-DALLOW_USE_MPI -DALWAYS_USE_MPI -DWORDLENGTH=4'
+
+# --------------------------
+# INCLUDE NETCDF DIRECTORIES
+# --------------------------
+INCLUDEDIRS=""
+INCLUDES="-I/share/local/include"
+LIBS="-L/share/local/lib"
+
+# -----------------------
+# INCLUDE MPI DIRECTORIES
+# -----------------------
+INCLUDES="$INCLUDES -I/usr/include -I/fs01/apps/intel/compilers_and_libraries_2017.3.191/linux/mpi/include64 -I/fs01/apps/netcdf-4.4.4-ifort/include -I$CODEROOT/libs/c_coupler/build"
+INCLUDEDIRS=""
+MPIINCLUDEDIR=""
+LIBS="$LIBS -L/fs01/apps/netcdf-4.4.4-ifort/lib -lnetcdff -L/fs01/apps/intel/compilers_and_libraries_2017.3.191/linux/mpi/lib64 -lmpi -L$CODEROOT/libs/c_coupler/build -lc_coupler -lstdc++"
+
+#MPI_HEADER_FILES='/usr/include/mpif.h /usr/include/mpiof.h /usr/include/mpif_parameters.h'
+#MPI_HEADER_FILES_INC='/usr/include/mpif.h /usr/include/mpiof.h /usr/include/mpif_parameters.h'
+MPI_HEADER_FILES='mpif.h mpiof.h mpif_parameters.h'
+MPI_HEADER_FILES_INC='mpi_headers/mpif.h mpi_headers/mpiof.h mpi_headers/mpif_parameters.h'
+
+#
+#INCLUDES="-I/usr/include -I/home/system/software/redqueen/libs/netcdf-4.0/include"
+#LIBS="-L/home/system/software/redqueen/libs/netcdf-4.0/lib -lnetcdf -lmpi"
+
+

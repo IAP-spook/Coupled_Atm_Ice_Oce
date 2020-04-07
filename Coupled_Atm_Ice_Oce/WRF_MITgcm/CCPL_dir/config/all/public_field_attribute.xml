@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<field name="test_array"  dimensions="H2D"   long_name="yuhao test_array"  type="state"  default_unit="yuu" />
+<field name="t2" dimensions="H2D" long_name="TEMP at 2M" type="state" default_unit="K" />
+<field name="q2" dimensions="H2D" long_name="QV at 2M" type="state" default_unit="kg kg-1" />
+<field name="u10" dimensions="H2D" long_name="U at 10 M" type="state" default_unit="m s-1" />
+<field name="v10" dimensions="H2D" long_name="V at 10 M" type="state" default_unit="m s-1" />

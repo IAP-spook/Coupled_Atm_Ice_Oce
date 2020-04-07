@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<export_interfaces comp_full_name="wrf">
+    <export_interface interface_name="send_data_to_MIT">
+        <export_field field_name="t2" />
+        <export_field field_name="q2" />
+        <export_field field_name="u10" />
+        <export_field field_name="v10" />
+    </export_interface>
+</export_interfaces>

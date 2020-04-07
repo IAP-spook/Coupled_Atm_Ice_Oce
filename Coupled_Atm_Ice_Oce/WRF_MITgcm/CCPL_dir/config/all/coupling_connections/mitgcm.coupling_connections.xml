@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<root>
+	<local_import_interfaces>
+		<import_interface name="recv_data_from_WRF" status="on">
+             <import_connection status="on">
+                  <fields status="on" default="all" />
+	                  <components status="on" default="off">
+    	    	          <component comp_full_name="wrf" interface_name="send_data_to_MIT" />
+			          </components>
+			 </import_connection>
+		</import_interface>
+	</local_import_interfaces>
+
+
+<component_full_names_sets>
+   <component_full_names_set  status="on" keyword="external_comps_for_coupling_generation" >
+       <entry comp_full_name="mitgcm" />
+       <entry comp_full_name="wrf"  />
+   </component_full_names_set>
+</component_full_names_sets>
+
+</root>

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<export_interfaces comp_full_name="mitgcm">
+    <export_interface interface_name="send_data_to_WRF">
+        <export_field field_name="test_array" />
+    </export_interface>
+</export_interfaces>

@@ -1,0 +1,28 @@
+ code
+
+ eesupp 模式配置
+
+ rootdir指明源代码
+
+ cd code 里的packages.conf指明了要编译的模块
+
+ EXF_OPTIONS.h各种选项
+
+
+  ./compile.sh
+
+  ls data* data开头的都是namelist
+  data.cal startDate_1 startDate_2开始时间
+  data endtime以秒为单位，niter0是时间步
+  pChkptFreq和chkptFreq可以存两个restart的频率
+
+  data.exf读文件和经纬度网格
+
+  code/SIZE.h设置并行度，每个网格多大，多少个CPU
+
+
+ bsub < job.lsf
+ bj 
+
+
+

@@ -1,0 +1,11 @@
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/atm/WRFV3/main
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/atm/WRFV3/inc
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/atm/WRFV3/dyn_em
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/atm/WRFV3/frame
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/c_coupler
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/esmf/src/include
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/esmf/src/Infrastructure
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/esmf/include
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/esmf/src/Infrastructure/TimeMgmt
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/esmf/src/Infrastructure/BasicUtil
+/home/yuhao/WORK3/C-Coupler2_from_yh/model_platform/models/libs/esmf/src/Infrastructure/Error

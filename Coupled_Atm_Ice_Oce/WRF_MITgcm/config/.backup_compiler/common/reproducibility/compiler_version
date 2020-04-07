@@ -1,0 +1,24 @@
+Common Compiler{
+CC := mpiicc
+version:	mpiicc for the Intel(R) MPI Library 2017 Update 2 for Linux*
+Copyright(C) 2003-2017, Intel Corporation.  All rights reserved.
+icc version 17.0.3 (gcc version 4.4.7 compatibility)
+
+CXX := mpiicpc
+version:	mpiicpc for the Intel(R) MPI Library 2017 Update 2 for Linux*
+Copyright(C) 2003-2017, Intel Corporation.  All rights reserved.
+icpc version 17.0.3 (gcc version 4.4.7 compatibility)
+
+FC := ifort
+version:	ifort version 17.0.3
+
+LD := $(FC)
+version:	/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/model_platform/scripts/utils/configure_system: line 80: $(FC): command not found
+
+}
+mitgcm{
+}
+wrf{
+}
+c_coupler{
+}

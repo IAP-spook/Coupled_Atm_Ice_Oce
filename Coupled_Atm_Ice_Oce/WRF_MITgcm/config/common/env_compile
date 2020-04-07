@@ -1,0 +1,8 @@
+export ENSEMBLE_NUM=0
+export ENSEMBLE_IDX=-1
+export LIBROOT=/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/WRF_MITgcm/run/lib
+export INCROOT=/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/WRF_MITgcm/run/lib/include
+export COMMON_COMPILER=/fs01/home/lomf/person/rensh/C-Coupler2_from_yh/WRF_MITgcm/config/common/machine/NMEFC/common_compiler.NMEFC.cfg
+export OS=Linux
+export GMAKE_J=8
+export SUBMITTER=lsf

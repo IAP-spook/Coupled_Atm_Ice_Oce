@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Time_setting
+	case_name="WRF_MITgcm"
+	case_description="This is a coupled model"
+	model_name="WRF_MITgcm"
+    run_type="initial"
+    leap_year="on"
+    start_date="20180721"
+    start_second="043200"
+    reference_date="00010101"
+    rest_freq_unit="seconds"
+    rest_freq_count="135"
+    rest_ref_case="C-Coupler coupled model"
+    rest_ref_date="00040401"
+    rest_ref_second="0"
+    stop_option="ndays"
+    stop_date="20180724"
+    stop_second="043200"
+    stop_n="3"
+/>

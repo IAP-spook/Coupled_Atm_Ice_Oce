@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Component name="wrf">
+    <import_interfaces>
+        <interface interface_name="recv_data_from_MIT">
+            <fields comp_full_name="mitgcm" interface_name="send_data_to_WRF">
+                <field name="test_array" />
+            </fields>
+        </interface>
+    </import_interfaces>
+    <export_interfaces>
+        <interface interface_name="send_data_to_MIT">
+            <fields comp_full_name="mitgcm" interface_name="recv_data_from_WRF">
+                <field name="t2" />
+                <field name="v10" />
+                <field name="u10" />
+                <field name="q2" />
+            </fields>
+        </interface>
+    </export_interfaces>
+</Component>

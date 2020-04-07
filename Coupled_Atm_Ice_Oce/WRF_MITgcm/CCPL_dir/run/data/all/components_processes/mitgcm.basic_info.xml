@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<Component>
+    <Online_Model comp_name="mitgcm" full_name="mitgcm" comp_type="cpl" parent_full_name="ROOT" enabled_in_parent_coupling_generation="true" processes=" 0~15" />
+</Component>

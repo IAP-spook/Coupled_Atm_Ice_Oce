@@ -1,0 +1,5 @@
+#CONFIGROOT=/data3/work/yuhao/C-Coupler2_from_yh/model_platform/config
+COMPSET=WRF_MITgcm
+MACH=NMEFC
+#CODEROOT=/data3/work/yuhao/C-Coupler2_from_yh/model_platform/models
+#DATAROOT=/data3/work/yuhao/C-Coupler2_from_yh/inputdata

@@ -1,0 +1,30 @@
+&compset_nml
+  exp_model               = "WRF_MITgcm"
+  case_name               = "WRF_MITgcm"
+  case_desc               = "WRF_MITgcm : This is the coupled climate system WRF_MITgcm(liuli-cess@tsinghua.edu.cn), did configuration at 20181021-102926"
+  config_time             = "20181021-102926"
+  run_type                = "initial"
+  start_date              = 20180107
+  start_second            = 21600
+  stop_date               = 20180111
+  stop_second             = 21600
+  rest_freq_unit          = "months"
+  rest_freq_count         = 1
+  stop_latency_seconds    = 0
+  component_name          = "nmefc"
+  compset_filename        = "comp_list.cfg"
+  comp_run_data_dir       = "/data3/work/yuhao/C-Coupler2_from_yh/WRF_MITgcm/run/cpl/nmefc/data"
+  comp_model_nml          = "nmefc.stdin"
+  cpl_interface_time_step = 3600
+  comp_log_filename       = "/data3/work/yuhao/C-Coupler2_from_yh/WRF_MITgcm/run/cpl/nmefc/run_logs/WRF_MITgcm.nmefc.log.20181021-102926"
+  leap_year               = .false.
+/
+
+&orb_nml
+  iyear_AD                = 1990
+/
+&ensemble_setting_nml
+  ensemble_member_id             = -1
+  random_seed_for_perturb_roundoff_errors = -9999
+  roundoff_errors_perturbation_type = "none"
+/
